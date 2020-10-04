@@ -6,6 +6,7 @@
 
 <title>お疲れ望遠鏡</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.13/c3.min.css">
 <style type="text/css">
 <!--
 .container {
@@ -69,9 +70,11 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.0.0/d3.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.13/c3.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.13/c3.min.css"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 	<script type="text/javascript">
@@ -111,6 +114,7 @@
 	}
 
 	function draw(data){
+		console.log(data)
 		var chart = c3.generate({
 			bindto: '#Graph',
 		    data: {
@@ -126,13 +130,13 @@
 		            }
 		        },
 		        y: {
-		            max: 90,
-		            min: 10
+		            max: 110,
+		            min: 0
 		        }
 		    }
 		});
 	}
-	//draw([["x", "2020-10-03 07:23:00", "2020-10-03 07:24:00"], ["user1", 50.0, 80.0], ["user2", 50.0, 80.0]]);
+	draw([]);
 
 	function reflesh(){
 		var url = $(location).attr('search');
